@@ -1,57 +1,6 @@
-/*! For license information please see bundle.js.LICENSE.txt */
-(() => {
-  const fs = {
-    "/home": {
-      modified: 1686149091094,
-      type: "dir",
-      size: 4096,
-    },
-    "/home/visitor": {
-      modified: 1686149091094,
-      type: "dir",
-      size: 4096,
-    },
-    "/home/visitor/README.txt": {
-      modified: 1686149091095,
-      type: "file",
-      content: "Welcome to my homepage!",
-      size: 151,
-    },
-    "/home/visitor/about": {
-      modified: 1686149091095,
-      type: "dir",
-      size: 4096,
-    },
-    "/home/visitor/about/cv.txt": {
-      modified: 1686149091095,
-      type: "file",
-      content: "Education: Lorem \n Experience: Ipsum",
-      size: 843,
-    },
-    "/home/visitor/about/contact.txt": {
-      modified: 1686149091096,
-      type: "file",
-      content: "TODO",
-      size: 426,
-    },
-    "/home/visitor/about/links.txt": {
-      modified: 1686149091096,
-      type: "file",
-      content: "github.com/Multifokalhirn",
-      size: 426,
-    },
-    "/home/visitor/projects": {
-      modified: 1686149091097,
-      type: "dir",
-      size: 4096,
-    },
-    "/home/visitor/projects/TODO.txt": {
-      modified: 1686149091097,
-      type: "file",
-      content: "- do everything well and with ease.",
-      size: 314,
-    },
-  };
+function term(fs) {
+  //   console.log(fs);
+  // openTerminal(data);
 
   var e = {
       290: (e, t, r) => {
@@ -187,10 +136,12 @@
         }
         var p = r(6183),
           d = r.n(p);
-
+        console.log("whatttt");
+        console.log(fs);
         var v = d()({
           fileSystem: fs,
-          host: "multifokalhirn",
+          host: "lw-homepage",
+          user: "visitor",
           addons: {
             ls_colors: {
               dir: function (e) {
@@ -199,15 +150,12 @@
             },
           },
         });
-        // (v.commands.apply_ = function (e) {
-        //   window.location.href.includes("careers-up.reef.pl")
-        //     ? e.output("ok, please apply through the job board you've found the link to this page on")
-        //     : window.open("apply/", "_blank").focus(),
-        //     e.exit();
-        // }),
-        (v.commands.clear = function (e) {
-          e.exit();
+        (v.commands.help = function (e) {
+          e.output("no one can help you"), e.exit();
         }),
+          (v.commands.clear = function (e) {
+            e.exit();
+          }),
           (v.aliases.cls = ["clear"]);
         const y = v,
           g = (e, t) =>
@@ -372,7 +320,7 @@
         }
         j.loadAddon(I),
           j.loadAddon(new n.WebLinksAddon()),
-          j.registerLinkMatcher(/\w+\.txt/, function (e, t) {
+          j.registerLinkMatcher(/\w+\.md/, function (e, t) {
             const r = `cat ${t}`;
             j.writeln(r),
               y.run(r).then((e) => {
@@ -676,7 +624,7 @@
                                     ("y" != e && "Y" != e) || this.printWide(r);
                                   })
                                 );
-                        } else this.handleCursorInsert("  ");
+                        } else this.handleCursorInsert("    ");
                         break;
                       case "":
                         this.setCursor(this._input.length),
@@ -718,6 +666,7 @@
                           var t;
                         });
                       }
+                      console.log(e.state.fileSystem);
                       return g(i, n);
                     },
                   }
@@ -907,27 +856,21 @@
           });
         };
       },
-      187: (e) => {
-        e.exports = function (e) {
-          e.output(e.system.state.host), e.exit();
-        };
-      },
       8039: (e, t, r) => {
         var i = {
-          // alias: r(8075),
+          alias: r(8075),
           cat: r(1395),
           cd: r(936),
-          // cp: r(2045),
+          cp: r(2045),
           history: r(4022),
           ls: r(6109),
           mkdir: r(7492),
-          // mv: r(3243),
+          mv: r(3243),
           pwd: r(1740),
-          // rm: r(887),
-          // rmdir: r(317),
-          // touch: r(3156),
+          rm: r(887),
+          rmdir: r(317),
+          touch: r(3156),
           whoami: r(1870),
-          hostname: r(187),
         };
         e.exports = i;
       },
@@ -1176,7 +1119,7 @@
                 },
                 user: "visitor",
                 group: "visitor",
-                host: "multifokalhirn",
+                host: "lw-homepage",
                 workingDirectory: "/home/visitor",
                 addons: { ls_colors: {} },
               };
@@ -1427,7 +1370,7 @@
       6346: (e) => {
         function t(e, t, r) {
           var i = t.toString().length;
-          return " ".repeat(e - i) + t + "" + r;
+          return " ".repeat(e - i) + t + "  " + r;
         }
         (e.exports.addLineNumber = t),
           (e.exports.addLineNumbers = function (e, r) {
@@ -4481,7 +4424,10 @@
                         h = a + Math.round((n - a) * i),
                         u = c + Math.round((o - c) * i),
                         f = l + Math.round((s - l) * i);
-                      return { css: r.toCss(h, u, f), rgba: r.toRgba(h, u, f) };
+                      return {
+                        css: r.toCss(h, u, f),
+                        rgba: r.toRgba(h, u, f),
+                      };
                     }),
                     (i.isOpaque = function (e) {
                       return 255 == (255 & e.rgba);
@@ -17140,4 +17086,4 @@
     (r.nc = void 0),
     r(9018),
     r(7681);
-})();
+}

@@ -1,6 +1,82 @@
-function term(fs) {
-  //   console.log(fs);
-  // openTerminal(data);
+(() => {
+  const fs = {
+    "/home": {
+      modified: 1686149091094,
+      type: "dir",
+      size: 4096,
+    },
+    "/home/visitor": {
+      modified: 1686149091094,
+      type: "dir",
+      size: 4096,
+    },
+    "/home/visitor/README.txt": {
+      modified: 1686149091095,
+      type: "file",
+      content: "Welcome to my homepage!",
+      size: 151,
+    },
+    "/home/visitor/about": {
+      modified: 1686149091095,
+      type: "dir",
+      size: 4096,
+    },
+    "/home/visitor/about/cv.txt": {
+      modified: 1686149091095,
+      type: "file",
+      content: "Education: Lorem \n Experience: Ipsum",
+      size: 843,
+    },
+    "/home/visitor/about/contact.txt": {
+      modified: 1686149091096,
+      type: "file",
+      content: "TODO",
+      size: 426,
+    },
+    "/home/visitor/about/links.txt": {
+      modified: 1686149091096,
+      type: "file",
+      content: "github.com/Multifokalhirn",
+      size: 426,
+    },
+    "/home/visitor/projects": {
+      modified: 1686149091097,
+      type: "dir",
+      size: 4096,
+    },
+    "/home/visitor/projects/TODO.txt": {
+      modified: 1686149091097,
+      type: "file",
+      content: "- do everything well and with ease.",
+      size: 314,
+    },
+  };
+  //
+
+  function getParentDirectory(path) {
+    // Remove trailing slash if it exists
+    if (path.endsWith("/")) {
+      path = path.slice(0, -1);
+    }
+
+    // Split the path into an array of directories
+    const pathParts = path.split("/");
+
+    // Remove the last directory (current directory) and join the rest
+    const parentPath = pathParts.slice(0, -1).join("/");
+
+    // Add a leading slash if the path is not empty
+    if (parentPath) {
+      return "/" + parentPath;
+    }
+
+    // If the parent directory is the root directory, return a single slash
+    return "/";
+    // Example usage:
+    // const absolutePath = '/my/path/';
+    // const parentDirectory = getParentDirectory(absolutePath);
+    // console.log(parentDirectory); // Output: "/my"
+  }
 
   var e = {
       290: (e, t, r) => {
@@ -136,12 +212,10 @@ function term(fs) {
         }
         var p = r(6183),
           d = r.n(p);
-        console.log("whatttt");
-        console.log(fs);
+
         var v = d()({
           fileSystem: fs,
-          host: "lw-homepage",
-          user: "user",
+          host: "multifokalhirn",
           addons: {
             ls_colors: {
               dir: function (e) {
@@ -150,12 +224,15 @@ function term(fs) {
             },
           },
         });
-        (v.commands.help = function (e) {
-          e.output("no one can help you"), e.exit();
+        // (v.commands.apply_ = function (e) {
+        //   window.location.href.includes("careers-up.reef.pl")
+        //     ? e.output("ok, please apply through the job board you've found the link to this page on")
+        //     : window.open("apply/", "_blank").focus(),
+        //     e.exit();
+        // }),
+        (v.commands.clear = function (e) {
+          e.exit();
         }),
-          (v.commands.clear = function (e) {
-            e.exit();
-          }),
           (v.aliases.cls = ["clear"]);
         const y = v,
           g = (e, t) =>
@@ -320,7 +397,7 @@ function term(fs) {
         }
         j.loadAddon(I),
           j.loadAddon(new n.WebLinksAddon()),
-          j.registerLinkMatcher(/\w+\.md/, function (e, t) {
+          j.registerLinkMatcher(/\w+\.txt/, function (e, t) {
             const r = `cat ${t}`;
             j.writeln(r),
               y.run(r).then((e) => {
@@ -624,7 +701,7 @@ function term(fs) {
                                     ("y" != e && "Y" != e) || this.printWide(r);
                                   })
                                 );
-                        } else this.handleCursorInsert("    ");
+                        } else this.handleCursorInsert("  ");
                         break;
                       case "":
                         this.setCursor(this._input.length),
@@ -666,7 +743,6 @@ function term(fs) {
                           var t;
                         });
                       }
-                      console.log(e.state.fileSystem);
                       return g(i, n);
                     },
                   }
@@ -786,9 +862,29 @@ function term(fs) {
         };
       },
       936: (e) => {
-        e.exports = function (e, t) {
+        e.exports = function (e) {
           t.shift();
           var r = t[0] || "/home/" + e.system.state.user;
+          e.system
+            .stat(r)
+            .then(function (e) {
+              if ("dir" !== e.type) return Promise.reject("cd: not a directory: " + r);
+            })
+            .then(function () {
+              e.system.changeDir(r).then(e.exit, function (t) {
+                e.error(t), e.exit(1);
+              });
+            })
+            .catch(function (t) {
+              e.error(t), e.exit(1);
+            });
+        };
+      },
+      420: (e) => {
+        console.log("..");
+        e.exports = function (e) {
+          t.shift();
+          var r = getParentDirectory(e.system.state.workingDirectory) || "/home/" + e.system.state.user;
           e.system
             .stat(r)
             .then(function (e) {
@@ -856,21 +952,28 @@ function term(fs) {
           });
         };
       },
+      187: (e) => {
+        e.exports = function (e) {
+          e.output(e.system.state.host), e.exit();
+        };
+      },
       8039: (e, t, r) => {
         var i = {
-          alias: r(8075),
+          // alias: r(8075),
           cat: r(1395),
           cd: r(936),
-          cp: r(2045),
+          "..": r(420),
+          // cp: r(2045),
           history: r(4022),
           ls: r(6109),
           mkdir: r(7492),
-          mv: r(3243),
+          // mv: r(3243),
           pwd: r(1740),
-          rm: r(887),
-          rmdir: r(317),
-          touch: r(3156),
+          // rm: r(887),
+          // rmdir: r(317),
+          // touch: r(3156),
           whoami: r(1870),
+          hostname: r(187),
         };
         e.exports = i;
       },
@@ -885,6 +988,9 @@ function term(fs) {
           s = "dir";
         e.exports = function (e, t) {
           t.shift();
+          if (t === "..") {
+            t = "cd " + getParentDirectory(e.system.state.workingDirectory) || "/home/" + e.system.state.user;
+          }
           const [r, a] = n(t);
           0 === a.length && a.push(".");
           const c = r.includes(o.SHOW_HIDDEN_FILES);
@@ -1115,12 +1221,12 @@ function term(fs) {
                 fileSystem: {
                   "/": { type: "dir", modified: Date.now() },
                   "/home": { type: "dir", modified: Date.now() },
-                  "/home/user": { type: "dir", modified: Date.now() },
+                  "/home/visitor": { type: "dir", modified: Date.now() },
                 },
-                user: "user",
-                group: "user",
-                host: "lw-homepage",
-                workingDirectory: "/home/user",
+                user: "visitor",
+                group: "visitor",
+                host: "multifokalhirn",
+                workingDirectory: "/home/visitor",
                 addons: { ls_colors: {} },
               };
               return e
@@ -1181,7 +1287,7 @@ function term(fs) {
                 return Promise.reject("syntax error near unexpected token `|'");
               var s = o.filter(function (e) {
                 var t = e[0];
-                return !i[t] && !n[t];
+                return !i[String(t)] && !n[t];
               });
               if (s.length)
                 return Promise.reject(
@@ -1198,7 +1304,7 @@ function term(fs) {
                     u = n[s[0]];
                   return (
                     u && s.splice(0, 1, ...u),
-                    i[s[0]](
+                    i[String(s[0])](
                       {
                         output: function (e) {
                           if (h) c += e;
@@ -1260,7 +1366,13 @@ function term(fs) {
             },
             stat: function (e) {
               var r = o(e);
-              if (!t.fileSystem[r]) return Promise.reject(e + ": No such file or directory");
+              if (!t.fileSystem[r]) {
+                if (t.fileSystem[r.toLowerCase()]) {
+                  r = r.toLowerCase();
+                } else {
+                  return Promise.reject(e + ": No such file or directory");
+                }
+              }
               var i = r.split("/");
               return Promise.resolve({
                 modified: t.fileSystem[r].modified,
@@ -1370,7 +1482,7 @@ function term(fs) {
       6346: (e) => {
         function t(e, t, r) {
           var i = t.toString().length;
-          return " ".repeat(e - i) + t + "  " + r;
+          return " ".repeat(e - i) + t + "" + r;
         }
         (e.exports.addLineNumber = t),
           (e.exports.addLineNumbers = function (e, r) {
@@ -4424,10 +4536,7 @@ function term(fs) {
                         h = a + Math.round((n - a) * i),
                         u = c + Math.round((o - c) * i),
                         f = l + Math.round((s - l) * i);
-                      return {
-                        css: r.toCss(h, u, f),
-                        rgba: r.toRgba(h, u, f),
-                      };
+                      return { css: r.toCss(h, u, f), rgba: r.toRgba(h, u, f) };
                     }),
                     (i.isOpaque = function (e) {
                       return 255 == (255 & e.rgba);
@@ -17086,4 +17195,4 @@ function term(fs) {
     (r.nc = void 0),
     r(9018),
     r(7681);
-}
+})();

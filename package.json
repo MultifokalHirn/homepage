@@ -1,0 +1,36 @@
+{
+  "name": "homepage",
+  "version": "0.0.1",
+  "description": "Lennard Wolf Homepage",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && npm run cover",
+    "lint": "standard",
+    "cover": "istanbul cover --report html test/index.js && npm run check && echo 'For more see: coverage/index.html'",
+    "check": "istanbul check-coverage --statements 95"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MultifokalHirn/homepage.git"
+  },
+  "author": "Lennard Wolf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MultifokalHirn/homepage/issues"
+  },
+  "homepage": "https://github.com/MultifokalHirn/homepage#readme",
+  "dependencies": {
+    "array.prototype.findindex": "^2.0.0",
+    "lodash.partition": "^4.6.0",
+    "sprintf-js": "^1.1.2",
+    "string.prototype.includes": "^1.0.0",
+    "string.prototype.repeat": "^0.2.0",
+    "string.prototype.startswith": "^0.2.0"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.3",
+    "standard": "^8.0.0",
+    "tape": "^4.5.1",
+    "live-server": "*"
+  }
+}

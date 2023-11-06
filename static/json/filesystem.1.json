@@ -9,48 +9,48 @@
         "type": "dir",
         "size": 4096
     },
-    "/home/visitor/welcome.md": {
+    "/home/visitor/help_us_improve.md": {
         "modified": 1686149091095,
         "type": "file",
         "content": "  Thank you for checking out our Careers page! If you have any suggestions, please \n  reach out to hiring@reef.pl. We'll be grateful for your feedback.",
         "size": 151
     },
-    "/home/visitor/experience": {
+    "/home/visitor/how_we_work": {
         "modified": 1686149091095,
         "type": "dir",
         "size": 4096
     },
-    "/home/visitor/experience/asynchronous.md": {
+    "/home/visitor/how_we_work/asynchronous.md": {
         "modified": 1686149091095,
         "type": "file",
         "content": "  We mostly work asynchronously, which means that you're free to code at any hour \n  you like. In any case, our staff members live in different time zones.\n\n  Every week, we hold a status call and a Sociocracy call for the whole team. \n  These two cases are the exceptions to our asynchronicity and are currently \n  scheduled for:\n\n  * Status call: Monday, 10:00 – 12:00 CET\n  * Sociocracy call: Tuesday, 12:00 – 13:00 CET\n\n  Obviously, depending on the project and the client you work for, additional \n  calls may need to be scheduled.\n\n  During Monday status calls, we share insights on the interesting things we've \n  achieved, sum up the previous week's work, and make plans for the week. We may \n  also just have some fun, for example, play a multiplayer game.\n\n  To find out more about Sociocracy, please see [sociocracy](sociocracy.md).",
         "size": 843
     },
-    "/home/visitor/experience/english_only.md": {
+    "/home/visitor/how_we_work/english_only.md": {
         "modified": 1686149091096,
         "type": "file",
         "content": "  We're an international company. Both our staff members and our clients come from \n  many different countries, so we hold all internal and external communications in \n  English. The only exception is one-on-one conversations: if you need to discuss \n  something with a colleague and are more comfortable using another language, \n  you're free to use it.\n\n  For public discussions and announcements, we use English so that no one will \n  feel left out no matter where they come from. This policy means that a \n  communicative level of English is required to work at Reef Technologies.\n\n  If at some point all staff members at Reef Technologies were from the same \n  country where English is a second language, we would _still_ keep all written \n  communication in English out of respect for the people who may join the company \n  in the future.",
         "size": 844
     },
-    "/home/visitor/experience/full_remote.md": {
+    "/home/visitor/how_we_work/full_remote.md": {
         "modified": 1686149091096,
         "type": "file",
         "content": "  We are a fully remote software house, which means that we do not have an office \n  at all. All of our staff members are free to work from wherever they see fit. \n  You may work from a coworking space if you so prefer, and we will be happy to \n  refund the cost up to a reasonable amount. It's also okay to work from home or a \n  beach in Bali. It's all up to you, as long as your environment allows for \n  productive coding.",
         "size": 426
     },
-    "/home/visitor/experience/seniors_only.md": {
+    "/home/visitor/how_we_work/seniors_only.md": {
         "modified": 1686149091096,
         "type": "file",
         "content": "  Our developer team at Reef Technologies is senior-only, and that includes the \n  CEO – he is also a seasoned Python programmer, which means that all decisions at \n  the company are taken with a full understanding of their technical aspects.\n\n  So far, all of our staff members have at least seven years of experience. \n  However, we're open to applications from anyone who's been coding professionally \n  for at least five years – not necessarily in Python, although fluency in this \n  language is obviously a must.\n\n  We love working in a senior-only team because it means no hand-holding and a \n  strong trust in the skills of every colleague. We're all good at what we do, and \n  we focus nearly exclusively on coding and creating solutions for interesting \n  problems. We try to automate all the remaining processes or outsource them to \n  professionals so that us developers can focus on what we love the most: creating \n  software.\n\n  Specifically: unlike many other companies, we never try to convert excellent \n  software engineers into mediocre managers. Instead, we distribute the \n  decision-making process via Sociocracy, and we use support personnel and \n  automation for things that we'd rather not do ourselves. Believe it or not, some \n  people are great at writing the type of document that you are reading right now, \n  and they even enjoy that kind of work. Rather than forcing ourselves to take \n  care of such things, we aggressively delegate them away from engineering.",
         "size": 1493
     },
-    "/home/visitor/experience/sociocracy.md": {
+    "/home/visitor/how_we_work/sociocracy.md": {
         "modified": 1686149091096,
         "type": "file",
         "content": "  We operate according to the Sociocracy 3.0 decision-making framework that allows \n  all company members to impact the organization. We avoid democratic solutions, \n  as they may cause the majority to dominate the issue, which leaves the minority \n  feeling dissatisfied and disenfranchised.\n\n  In our weekly Sociocracy meetings, everyone is encouraged to raise issues and \n  propose ideas for improving the company. We iterate on a solution until no one \n  feels like they have a reason to give an objection. That is a simplified version \n  of what we actually do that shows the spirit of the process without going into \n  technical details – but the full procedure is more robust.",
         "size": 683
     },
-    "/home/visitor/experience/time_tracking.md": {
+    "/home/visitor/how_we_work/time_tracking.md": {
         "modified": 1686149091097,
         "type": "file",
         "content": "  Fair compensation in a very flexible work environment is a challenge. At Reef \n  Technologies, nobody controls or oversees the time of day when you work – you \n  are free to set your own schedule.\n\n  We use an app called Hubstaff, which makes it easy to log the time that you work \n  to a specific project. At the end of the billing period, which may be a week or \n  a month, we summarize the tracked time and invoice the client, but also, at the \n  end of the month, a bot summarizes the time tracked by a staff member and \n  multiplies it by their hourly rate to figure out the compensation.",
@@ -169,7 +169,7 @@
     "/home/visitor/what_we_offer/benefits.md": {
         "modified": 1686149091101,
         "type": "file",
-        "content": "  We're a fully remote company, so it would be quite hard for us to organize Fruit \n  Fridays – but that doesn't mean all we do is wire you the money and peace out. \n  We're firmly committed to creating an environment that allows our staff members \n  to enjoy a proper life-work balance. We really believe that life should come \n  first.\n\n  As a developer at Reef Technologies, you can expect the following benefits:\n\n  * Asynchronicity – you choose when to start and finish work. If the project is \n  doing okay, we don't mind when you decide to code. We only hold an average of \n  two synchronized calls per week.\n  * Financial support to pay for a coworking space (up to a reasonable amount) if \n  you need it.\n  * Financial support to buy hardware. (See more at: \n  [hardware_support](hardware_support.md)).\n  * A [private assistant](https://reef.pl/virtual-assistants/).\n  * A modest but functional, zero-approval budget for a server, license, domain \n  etc if you need something to work on a project efficiently. (See more at: \n  [staff_budget](staff_budget.md)).\n\n  Is there some other benefit that you think we should offer? We'll be happy to \n  hear about it, as one final advantage of working with us is Sociocracy – the \n  decision-making process where every individual has a real impact on company \n  policy. See more at: [sociocracy](../experience/sociocracy.md).",
+        "content": "  We're a fully remote company, so it would be quite hard for us to organize Fruit \n  Fridays – but that doesn't mean all we do is wire you the money and peace out. \n  We're firmly committed to creating an environment that allows our staff members \n  to enjoy a proper life-work balance. We really believe that life should come \n  first.\n\n  As a developer at Reef Technologies, you can expect the following benefits:\n\n  * Asynchronicity – you choose when to start and finish work. If the project is \n  doing okay, we don't mind when you decide to code. We only hold an average of \n  two synchronized calls per week.\n  * Financial support to pay for a coworking space (up to a reasonable amount) if \n  you need it.\n  * Financial support to buy hardware. (See more at: \n  [hardware_support](hardware_support.md)).\n  * A [private assistant](https://reef.pl/virtual-assistants/).\n  * A modest but functional, zero-approval budget for a server, license, domain \n  etc if you need something to work on a project efficiently. (See more at: \n  [staff_budget](staff_budget.md)).\n\n  Is there some other benefit that you think we should offer? We'll be happy to \n  hear about it, as one final advantage of working with us is Sociocracy – the \n  decision-making process where every individual has a real impact on company \n  policy. See more at: [sociocracy](../how_we_work/sociocracy.md).",
         "size": 1377
     },
     "/home/visitor/what_we_offer/can_it_be_a_side_job.md": {
