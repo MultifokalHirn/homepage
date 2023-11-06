@@ -4,7 +4,7 @@
   "description": "Lennard Wolf - Homepage",
   "main": "src/index.js",
   "scripts": {
-    "start": "npm run build && live-server --mount=/homepage:../homepage",
+    "start": "npm run build && live-server --mount=/homepage:../homepage --ignore=.git --ignore=src/misc",
     "build": "npm run browserify && npm run minify",
     "browserify": "browserify src/browser-version.js > homepage.js",
     "minify": "uglifyjs homepage.js > static/js/homepage.min.js",
@@ -20,7 +20,7 @@
   "author": {
     "name": "Lennard Wolf",
     "email": "caring-auteur0c@icloud.com",
-    "url": "https://jorin.me"
+    "url": "https://multifokalhirn.github.io/homepage/"
   },
   "license": "ISC",
   "bugs": {

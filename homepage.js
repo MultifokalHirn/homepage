@@ -5228,13 +5228,14 @@ module.exports = function shimStringTrim() {
 
 },{"./polyfill":65,"define-properties":9}],67:[function(require,module,exports){
 var aliases = {
-  ll: ['ls', '-la'],
-  la: ['ls', '-a'],
-  more: ['cat'],
-  less: ['cat']
-}
+  ll: ["ls", "-la"],
+  ll: ["ls", "-la"],
+  la: ["ls", "-a"],
+  more: ["cat"],
+  less: ["cat"],
+};
 
-module.exports = aliases
+module.exports = aliases;
 
 },{}],68:[function(require,module,exports){
 window.bashEmulator = require('./index')
@@ -5885,7 +5886,9 @@ function bashEmulator(initialState) {
       if (["cat", "less", "more"].includes(command)) {
         return Promise.reject(`${command}: missing operand`);
       }
-
+      if (command == "..") {
+        command = "cd ..";
+      }
       var argsList = input.split("|").map(function (pipe) {
         var args = pipe
           .trim()

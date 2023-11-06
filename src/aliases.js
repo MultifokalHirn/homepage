@@ -1,8 +1,9 @@
 var aliases = {
-  ll: ['ls', '-la'],
-  la: ['ls', '-a'],
-  more: ['cat'],
-  less: ['cat']
-}
+  ll: ["ls", "-la"],
+  ll: ["ls", "-la"],
+  la: ["ls", "-a"],
+  more: ["cat"],
+  less: ["cat"],
+};
 
-module.exports = aliases
+module.exports = aliases;

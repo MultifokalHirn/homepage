@@ -18,7 +18,7 @@
     html,
     body {
       color: white;
-      font-size: 150%;
+      font-size: 130%;
       height: 100%;
       width: 100%;
       margin: 0;
@@ -29,7 +29,7 @@
     #input {
       background: black;
       font-family: monospace;
-      line-height: 120%;
+      line-height: 110%;
     }
 
     #output {
@@ -230,25 +230,11 @@
       }
       input.focus()
     })
-
-    run('pwd').then(function () {
-      run('ls')
-    })
+    run('cat README.txt')
+    // run('pwd').then(function () {
+    //   run('cat README.txt')
+    // })
   </script>
-
-  <!-- <div id="gdpr">
-        <div class="content">
-            <p class="headline">The new European data protection law requires us to inform you of the following before
-                you use our website:</p>
-            <p class="text">We use necessary cookies to ensure proper website operation, optional analytics cookies to
-                help us understand how visitors use it and optional functionality and targeting cookies to give you the
-                best experience. You can change this in your browser settings.
-                By clicking "Accept" you agree to our use of cookies and similar technologies.</p>
-            <div class="actions">
-                <button class="btn" id="continue">Accept</button>
-            </div>
-        </div>
-    </div> -->
 
 
 </body>

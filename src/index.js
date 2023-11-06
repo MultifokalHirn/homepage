@@ -43,7 +43,9 @@ function bashEmulator(initialState) {
       if (["cat", "less", "more"].includes(command)) {
         return Promise.reject(`${command}: missing operand`);
       }
-
+      if (command == "..") {
+        command = "cd ..";
+      }
       var argsList = input.split("|").map(function (pipe) {
         var args = pipe
           .trim()
