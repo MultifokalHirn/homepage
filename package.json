@@ -1,9 +1,10 @@
 {
   "name": "homepage",
   "version": "0.0.1",
-  "description": "Lennard Wolf Homepage",
-  "main": "index.js",
+  "description": "Lennard Wolf - Homepage",
+  "main": "src/index.js",
   "scripts": {
+    "build": "browserify src/browser-version.js | uglifyjs > static/js/homepage.min.js",
     "test": "npm run lint && npm run cover",
     "lint": "standard",
     "cover": "istanbul cover --report html test/index.js && npm run check && echo 'For more see: coverage/index.html'",
@@ -13,7 +14,11 @@
     "type": "git",
     "url": "git+https://github.com/MultifokalHirn/homepage.git"
   },
-  "author": "Lennard Wolf",
+  "author": {
+    "name": "Lennard Wolf",
+    "email": "caring-auteur0c@icloud.com",
+    "url": "https://jorin.me"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MultifokalHirn/homepage/issues"
@@ -31,6 +36,8 @@
     "istanbul": "^0.4.3",
     "standard": "^8.0.0",
     "tape": "^4.5.1",
+    "browserify": "^14.0.0",
+    "uglify-js": "*",
     "live-server": "*"
   }
 }
