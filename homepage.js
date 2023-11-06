@@ -5239,7 +5239,7 @@ module.exports = aliases
 },{}],68:[function(require,module,exports){
 window.bashEmulator = require('./index')
 
-},{"./index":83}],69:[function(require,module,exports){
+},{"./index":84}],69:[function(require,module,exports){
 
 function alias (env) {
   for (const [key, value] of Object.entries(env.system.aliases)) {
@@ -5306,7 +5306,7 @@ function cat (env, args) {
 
 module.exports = cat
 
-},{"../utils/lineNumber":84}],71:[function(require,module,exports){
+},{"../utils/lineNumber":85}],71:[function(require,module,exports){
 function cd (env, args) {
   // Ignore command name
   args.shift()
@@ -5424,7 +5424,7 @@ function history (env) {
 module.exports = history
 
 
-},{"../utils/lineNumber":84}],74:[function(require,module,exports){
+},{"../utils/lineNumber":85}],74:[function(require,module,exports){
 var commands = {
   alias: require('./alias'),
   cat: require('./cat'),
@@ -5554,7 +5554,7 @@ function ls (env, commandOptions) {
 
 module.exports = ls
 
-},{"../utils/parseCommandArgs":85,"sprintf-js":59}],76:[function(require,module,exports){
+},{"../utils/parseCommandArgs":86,"sprintf-js":59}],76:[function(require,module,exports){
 function mkdir (env, args) {
   // Ignore command name
   args.shift()
@@ -5784,12 +5784,69 @@ function whoami (env) {
 module.exports = whoami
 
 },{}],83:[function(require,module,exports){
+var fileSystem = {
+  "/home": {
+    modified: Date.now(),
+    type: "dir",
+    size: 4096,
+  },
+  "/home/visitor": {
+    modified: Date.now(),
+    type: "dir",
+    size: 4096,
+  },
+  "/home/visitor/README.txt": {
+    modified: Date.now(),
+    type: "file",
+    content: "Welcome to my homepage!",
+    size: 151,
+  },
+  "/home/visitor/about": {
+    modified: Date.now(),
+    type: "dir",
+    size: 4096,
+  },
+  "/home/visitor/about/cv.txt": {
+    modified: Date.now(),
+    type: "file",
+    content: "Education: Lorem \n Experience: Ipsum",
+    size: 843,
+  },
+  "/home/visitor/about/contact.txt": {
+    modified: Date.now(),
+    type: "file",
+    content: "TODO",
+    size: 426,
+  },
+  "/home/visitor/about/links.txt": {
+    modified: Date.now(),
+    type: "file",
+    content: "github.com/Multifokalhirn",
+    size: 426,
+  },
+  "/home/visitor/projects": {
+    modified: Date.now(),
+    type: "dir",
+    size: 4096,
+  },
+  "/home/visitor/projects/TODO.txt": {
+    modified: Date.now(),
+    type: "file",
+    content: "- do everything well and with ease.",
+    size: 314,
+  },
+};
+
+module.exports = fileSystem;
+
+},{}],84:[function(require,module,exports){
 require("array.prototype.findindex");
 require("string.prototype.startswith");
 require("string.prototype.includes");
 require("string.prototype.repeat");
 var commands = require("./commands");
 var aliases = require("./aliases");
+var fileSystem = require("./filesystem");
 
 function bashEmulator(initialState) {
   var state = createState(initialState);
@@ -6113,20 +6170,7 @@ function createState(initialState) {
 function defaultState() {
   return {
     history: [],
-    fileSystem: {
-      "/": {
-        type: "dir",
-        modified: Date.now(),
-      },
-      "/home": {
-        type: "dir",
-        modified: Date.now(),
-      },
-      "/home/visitor": {
-        type: "dir",
-        modified: Date.now(),
-      },
-    },
+    fileSystem: fileSystem,
     user: "visitor",
     group: "visitor",
     host: "localhost",
@@ -6164,7 +6208,7 @@ function joinPaths(a, b) {
 
 module.exports = bashEmulator;
 
-},{"./aliases":67,"./commands":74,"array.prototype.findindex":2,"string.prototype.includes":60,"string.prototype.repeat":61,"string.prototype.startswith":62}],84:[function(require,module,exports){
+},{"./aliases":67,"./commands":74,"./filesystem":83,"array.prototype.findindex":2,"string.prototype.includes":60,"string.prototype.repeat":61,"string.prototype.startswith":62}],85:[function(require,module,exports){
 function addLineNumber (width, num, line) {
   var numChars = num.toString().length
   var space = ' '.repeat(width - numChars)
@@ -6179,7 +6223,7 @@ module.exports.addLineNumbers = function (width, lines) {
   })
 }
 
-},{}],85:[function(require,module,exports){
+},{}],86:[function(require,module,exports){
 const partition = require('lodash.partition')
 
 function parseCommandArgs (commandArgs) {

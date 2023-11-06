@@ -4,6 +4,7 @@ require("string.prototype.includes");
 require("string.prototype.repeat");
 var commands = require("./commands");
 var aliases = require("./aliases");
+var fileSystem = require("./filesystem");
 
 function bashEmulator(initialState) {
   var state = createState(initialState);
@@ -327,20 +328,7 @@ function createState(initialState) {
 function defaultState() {
   return {
     history: [],
-    fileSystem: {
-      "/": {
-        type: "dir",
-        modified: Date.now(),
-      },
-      "/home": {
-        type: "dir",
-        modified: Date.now(),
-      },
-      "/home/visitor": {
-        type: "dir",
-        modified: Date.now(),
-      },
-    },
+    fileSystem: fileSystem,
     user: "visitor",
     group: "visitor",
     host: "localhost",
