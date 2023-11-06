@@ -4,7 +4,10 @@
   "description": "Lennard Wolf - Homepage",
   "main": "src/index.js",
   "scripts": {
-    "build": "browserify src/browser-version.js | uglifyjs > static/js/homepage.min.js",
+    "start": "live-server --mount=/homepage:../homepage",
+    "build": "npm run browserify && npm run minify",
+    "browserify": "browserify src/browser-version.js > homepage.js",
+    "minify": "uglifyjs homepage.js > static/js/homepage.min.js",
     "test": "npm run lint && npm run cover",
     "lint": "standard",
     "cover": "istanbul cover --report html test/index.js && npm run check && echo 'For more see: coverage/index.html'",
@@ -33,11 +36,11 @@
     "string.prototype.startswith": "^0.2.0"
   },
   "devDependencies": {
-    "istanbul": "^0.4.3",
-    "standard": "^8.0.0",
-    "tape": "^4.5.1",
     "browserify": "^14.0.0",
-    "uglify-js": "*",
-    "live-server": "*"
+    "istanbul": "^0.4.3",
+    "live-server": "*",
+    "standard": "^17.1.0",
+    "tape": "^4.5.1",
+    "uglify-js": "*"
   }
 }
