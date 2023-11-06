@@ -43,9 +43,7 @@ function bashEmulator(initialState) {
       if (["cat", "less", "more"].includes(command)) {
         return Promise.reject(`${command}: missing operand`);
       }
-      if (command == "..") {
-        command = "cd ..";
-      }
+
       var argsList = input.split("|").map(function (pipe) {
         var args = pipe
           .trim()
@@ -331,12 +329,19 @@ function defaultState() {
   return {
     history: [],
     fileSystem: fileSystem,
-    user: "visitor",
-    group: "visitor",
+    user: "user",
+    group: "user",
     host: "localhost",
-    workingDirectory: "/home/visitor",
+    workingDirectory: "/home/user",
     addons: {
-      ls_colors: {},
+      ls_colors: {
+        dir: function (name) {
+          return "<span class='dir'>" + name + "</span>";
+        },
+        forbidden: function (name) {
+          return "<span class='error'>" + name + "</span>";
+        },
+      },
     },
   };
 }

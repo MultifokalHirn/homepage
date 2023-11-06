@@ -1,7 +1,8 @@
 var aliases = {
+  "..": ["cd ", ".."],
+  "...": ["cd ", "../.."],
   ll: ["ls", "-la"],
-  ll: ["ls", "-la"],
-  la: ["ls", "-a"],
+  la: ["ls", "-lah"],
   more: ["cat"],
   less: ["cat"],
 };

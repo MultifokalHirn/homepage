@@ -4,9 +4,10 @@
   "description": "Lennard Wolf - Homepage",
   "main": "src/index.js",
   "scripts": {
-    "start": "npm run build && live-server --mount=/homepage:../homepage --ignore=.git --ignore=src/misc",
+    "start": "npm run build && live-server --mount=/homepage:../homepage --ignore=../.git --ignore=../src/misc",
     "build": "npm run browserify && npm run minify",
-    "browserify": "browserify src/browser-version.js > homepage.js",
+    "browserify": "browserify  src/browser-version.js > homepage.js",
+    "help": "browserify --help",
     "minify": "uglifyjs homepage.js > static/js/homepage.min.js",
     "test": "npm run lint && npm run cover",
     "lint": "standard",

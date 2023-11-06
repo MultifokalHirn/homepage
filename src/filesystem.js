@@ -4,46 +4,52 @@ var fileSystem = {
     type: "dir",
     size: 4096,
   },
-  "/home/visitor": {
+  "/home/lw": {
     modified: Date.now(),
     type: "dir",
     size: 4096,
   },
-  "/home/visitor/README.txt": {
+  // "/home/lw/.": {
+  //   modified: Date.now(),
+  //   type: "file",
+  //   content: "Not allowed.",
+  //   size: 151,
+  // },
+  "/home/user": {
+    modified: Date.now(),
+    type: "dir",
+    size: 4096,
+  },
+  "/home/user/README.txt": {
     modified: Date.now(),
     type: "file",
-    content: "Welcome to my homepage!",
+    content: "Welcome to my homepage!\nIt is still under construction.",
     size: 151,
   },
-  "/home/visitor/about": {
-    modified: Date.now(),
-    type: "dir",
-    size: 4096,
-  },
-  "/home/visitor/about/cv.txt": {
+  "/home/user/cv.txt": {
     modified: Date.now(),
     type: "file",
-    content: "Education: Lorem \n Experience: Ipsum",
+    content: "Education: Lorem \nExperience: Ipsum",
     size: 843,
   },
-  "/home/visitor/about/contact.txt": {
+  "/home/user/contact.txt": {
     modified: Date.now(),
     type: "file",
     content: "TODO",
     size: 426,
   },
-  "/home/visitor/about/links.txt": {
+  "/home/user/links.txt": {
     modified: Date.now(),
     type: "file",
-    content: "github.com/Multifokalhirn",
+    content: "github.com/Multifokalhirn\n",
     size: 426,
   },
-  "/home/visitor/projects": {
+  "/home/user/blog": {
     modified: Date.now(),
     type: "dir",
     size: 4096,
   },
-  "/home/visitor/projects/TODO.txt": {
+  "/home/user/blog/TODO.txt": {
     modified: Date.now(),
     type: "file",
     content: "- do everything well and with ease.",

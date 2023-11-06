@@ -19,17 +19,18 @@
     body {
       color: white;
       font-size: 130%;
+      font-family: monospace;
       height: 100%;
       width: 100%;
       margin: 0;
-      padding: 0;
+      padding: 0.5% 0.5% 0.5% 0.5% !important;
     }
 
     body,
     #input {
       background: black;
       font-family: monospace;
-      line-height: 110%;
+      line-height: 115%;
     }
 
     #output {
@@ -49,6 +50,14 @@
     #input,
     .input-wrap {
       color: lime;
+    }
+
+    .cmd {
+      color: lime;
+    }
+
+    .dir {
+      color: aqua;
     }
 
     .error {
@@ -172,6 +181,11 @@
     function log(result) {
       if (result) {
         output.innerHTML += result + '\n'
+      }
+    }
+    function show_cmd(cmd) {
+      if (cmd) {
+        output.innerHTML += "<span class='cmd'>" + cmd + '\n' + "</span>"
       }
     }
 
