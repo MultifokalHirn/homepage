@@ -1,7 +1,7 @@
 html,
 body {
   color: white;
-  font-size: 130%;
+  font-size: 100%;
   font-family: monospace;
   height: 100%;
   width: 100%;
@@ -13,7 +13,7 @@ body,
 #input {
   background: black;
   font-family: monospace;
-  line-height: 115%;
+  line-height: 95%;
 }
 
 #output {

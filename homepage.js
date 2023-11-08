@@ -5809,8 +5809,14 @@ var fileSystem = {
     modified: Date.now(),
     type: "file",
     content:
-      "------------------------------------------------------------------------------\n       Lennard Wolf - Software Engineer\n------------------------------------------------------------------------------\n\n[Status: under Construction]\n\n➤ About Lennard:\n------------------------------------------------------------------------------\nMy name is Lennard Wolf and I am a Tech Lead at Signatrix GmbH.\n\n➤ Skills:\n------------------------------------------------------------------------------\n🚀 Main Programming Languages: Python, Javascript\n🔐 CI & Dev Ops: docker, ansible, github actions, etc \n💻 Software Architect: Building scalable and efficient systems\n🌐 Web Development: HTML, CSS, JavaScript \n\n➤ Achievements:\n------------------------------------------------------------------------------\nAt Signatrix I am working on a wide range of different topics across a wide range of tools and technologies:\n🏆 tba\n🚀 tba\n\n\n➤ About me:\n------------------------------------------------------------------------------\n I am passionate about X, Y, and especially Z!.\n\n------------------------------------------------------------------------------\n\n[End of Document]\n",
+      "Welcome to the homepage of Lennard Wolf!\n\nFeel free to have a look around, which is done similar to using a bash shell.\n[Site Status: Under Construction]\n",
     size: 151,
+  },
+  "/home/user/about.txt": {
+    modified: Date.now(),
+    type: "file",
+    content: "------------------------------------------------------------------------------\n       Lennard Wolf - Software Engineer\n------------------------------------------------------------------------------\n[Status: under Construction]\n\n➤ About Lennard:\n------------------------------------------------------------------------------\nMy name is Lennard Wolf and I am a Tech Lead at Signatrix GmbH.\n\n➤ Skills:\n------------------------------------------------------------------------------\n🚀 Main Programming Languages: Python, Javascript\n🔐 CI & Dev Ops: docker, ansible, github actions, etc \n💻 Software Architect: Building scalable and efficient systems\n🌐 Web Development: HTML, CSS, JavaScript \n\n➤ Achievements:\n------------------------------------------------------------------------------\nAt Signatrix I am working on a wide range of different topics across a wide range of tools and technologies:\n🏆 tba\n🚀 tba\n\n\n➤ About me:\n------------------------------------------------------------------------------\n I am passionate about X, Y, and especially Z!.\n",
+    size: 843,
   },
   "/home/user/cv.txt": {
     modified: Date.now(),

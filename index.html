@@ -14,56 +14,6 @@
   <meta property="og:image"
     content="https://media.licdn.com/dms/image/D4E03AQFT4kbRB1fswA/profile-displayphoto-shrink_800_800/0/1689712569623?e=2147483647&v=beta&t=hAAZQjr5fFFHyebIt4c2hI4jLKa-VfFc7yhvrwcJt9E" />
   <link rel="stylesheet" type="text/css" href="/homepage/static/css/terminal.css">
-  <!-- <style>
-    html,
-    body {
-      color: white;
-      font-size: 130%;
-      font-family: monospace;
-      height: 100%;
-      width: 100%;
-      margin: 0;
-      padding: 0.5% 0.5% 0.5% 0.5% !important;
-    }
-
-    body,
-    #input {
-      background: black;
-      font-family: monospace;
-      line-height: 115%;
-    }
-
-    #output {
-      white-space: pre;
-    }
-
-    #input {
-      width: 90%;
-      border: none;
-      font-size: inherit;
-    }
-
-    #input:focus {
-      outline: none;
-    }
-
-    #input,
-    .input-wrap {
-      color: lime;
-    }
-
-    .cmd {
-      color: lime;
-    }
-
-    .dir {
-      color: aqua;
-    }
-
-    .error {
-      color: red;
-    }
-  </style> -->
 
   <script type="text/javascript">
     function setCookie(name, value, days) {
@@ -165,6 +115,10 @@
       }
       await delay(200);
       output.innerHTML += "\n";
+      // output.innerHTML = "";
+      // await delay(200);
+      output.innerHTML = "Welcome to the homepage of Lennard Wolf!\n\n";
+      await delay(200);
     }
 
     simulate_boot().then(() => {
@@ -181,12 +135,12 @@
 
       function log(result) {
         if (result) {
-          output.innerHTML += result + '\n'
+          output.innerHTML += result + '\n\n'
         }
       }
       function show_cmd(cmd) {
         if (cmd) {
-          output.innerHTML += "<span class='cmd'>" + cmd + '\n' + "</span>"
+          output.innerHTML += "<span class='cmd'>" + cmd + "</span>"
         }
       }
 
@@ -246,12 +200,11 @@
         input.focus()
       })
 
-
-      run('cat welcome.txt')
+      // run('cat welcome.txt')
+      run('pwd').then(() => { setTimeout(resolve, 200) }).then(() => {
+        run('ls')
+      })
     })
-    // run('pwd').then(() => {
-    //   run('cat README.txt')
-    // })
   </script>
 
 
