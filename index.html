@@ -10,12 +10,12 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Lennard Wolf" />
-  <meta property="og:description" content="user@lw-homepage /home $" />
+  <meta property="og:description" content="/home/user $" />
   <meta property="og:image"
     content="https://media.licdn.com/dms/image/D4E03AQFT4kbRB1fswA/profile-displayphoto-shrink_800_800/0/1689712569623?e=2147483647&v=beta&t=hAAZQjr5fFFHyebIt4c2hI4jLKa-VfFc7yhvrwcJt9E" />
   <link rel="stylesheet" type="text/css" href="/homepage/static/css/terminal.css">
 
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
     function setCookie(name, value, days) {
       var expires = "";
       if (days) {
@@ -40,7 +40,7 @@
         });
       }
     });
-  </script>
+  </script> -->
 </head>
 
 <body>
@@ -136,11 +136,12 @@
       function log(result) {
         if (result) {
           output.innerHTML += result + '\n\n'
+          document.body.scrollTop = 10e6
         }
       }
       function show_cmd(cmd) {
         if (cmd) {
-          output.innerHTML += "<span class='command'>" + cmd + "\n\n</span>"
+          output.innerHTML += "<span class='command'>" + cmd + "\n</span>"
         }
       }
 
@@ -202,9 +203,10 @@
 
       // run('cat welcome.txt')
       run('pwd').then(() => {
-        run('ls').then(() => {
-          run('cat about.txt')
-        })
+        run('ls')
+        // .then(() => {
+        //   run('cat about.txt')
+        // })
       })
     })
   </script>

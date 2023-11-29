@@ -1,11 +1,12 @@
 html,
 body {
   color: white;
-  font-size: 100%;
+  font-size: 95%;
   font-family: monospace;
   height: 100%;
   width: 100%;
-  margin: 0;
+  line-height: 100%;
+  /* margin: 0; */
   padding: 0.5% 0.5% 0.5% 0.5% !important;
 }
 
@@ -19,8 +20,9 @@ body,
 #output {
   white-space: pre;
   /* color: #ffffff; */
+  font-size: 95%;
 
-  /* padding: 1% 1% 1% 1%; */
+
   .cmd {
     color: lime;
   }
@@ -28,11 +30,11 @@ body,
 
 
 
-#input {
+/* #input {
   width: 90%;
   border: none;
   font-size: inherit;
-}
+} */
 
 #input:focus {
   outline: none;

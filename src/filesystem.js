@@ -24,7 +24,7 @@ var fileSystem = {
   "/home/user/about.txt": {
     modified: Date.now(),
     type: "file",
-    content: "My name is Lennard Wolf and I am a programmer working and living in Berlin, Germany.\n\nI am Tech Lead at Signatrix, where I contribute to the development of a suite of computer vision applications and the infrastructure around them.\n\n\nProfessionally, my focus is classic software engineering, as well as creating (infra-)structures to ensure robust processes and/or environments (see cv.txt for more details).\n\nIRL I prefer spending time with my wife and dog, doing gardening/renovation work, or finding an outlet for my creativity in music, visual art, or audiobook adjacent formats.\n",
+    content: "My name is Lennard Wolf and I am a programmer working and living in Berlin, Germany.\n\nI am Tech Lead at Signatrix, where I contribute to the development of a suite of computer vision applications and the infrastructure around them.\n\n\nProfessionally, my focus is classic software engineering, as well as creating (infra-)structures to ensure robust processes and/or environments (see cv.txt for more details).\n\nIRL I prefer spending time with my wife and dog, doing gardening/renovation work, or finding an outlet for my creativity in music, visual art, or audiobook adjacent formats.",
     size: 843,
   },
   "/home/user/cv.txt": {
